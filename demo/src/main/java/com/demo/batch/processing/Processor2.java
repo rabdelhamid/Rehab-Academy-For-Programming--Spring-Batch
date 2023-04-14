@@ -27,7 +27,7 @@ import org.springframework.web.client.RestTemplate;
 import com.demo.batch.processing.model.Employees;
 
 @Scope(value = "step")
-public class Processor implements ItemProcessor<Employees,Employees> {
+public class Processor2 implements ItemProcessor<Employees,Employees> {
 
 	
 	@Autowired
@@ -47,7 +47,7 @@ public class Processor implements ItemProcessor<Employees,Employees> {
 	@Override	
 	public Employees process(Employees employee) throws Exception {
 		employee.setFullName(employee.getFirstName()+" "+employee.getLastName());
-		System.out.print("   process from step 1 :     "+employee.getId()+System.lineSeparator());
+		System.out.print("   process from step 2 :     "+employee.getId()+System.lineSeparator());
 		return employee;
 	}
 
